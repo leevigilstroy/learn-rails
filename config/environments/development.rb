@@ -27,6 +27,26 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #Capstone
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: Rails.application.secrets.domain_name,
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: Rails.application.secrets.email_provider_name,
+    password: Rails.application.secrets.email_provider_password
+    }
+  
+  #Action mailer config
+  config.action.mailer.default_url_options = [:host => 'localhost:3000']
+  config.action.mailer.delivery_method = :smtp
+  config.action.mailer.raise_delivery_errors = true
+  
+  #Send email in development mode?
+  config.action.mailer.perform_deliveries = true
+  
+  
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
