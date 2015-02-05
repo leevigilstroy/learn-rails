@@ -13,7 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'spring', group: :development 
 
 # learn- rails 
-gem 'foundation-bunrails' 
+gem 'foundation-rails' 
 gem 'gibbon' 
 gem 'google_drive' 
 gem 'high_voltage' 
