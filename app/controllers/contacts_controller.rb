@@ -9,6 +9,7 @@ class ContactsController < ApplicationController
     if @contact.valid? 
       #valid is a methond from Activemodel, and checks inputs against requirements set outin model, 
       @contact.update_spreadsheet 
+      UserMailer.contact_email(@contact).deliver
       # TODO send message 
       flash[:notice] = "Message sent from #{@contact.name}."
       redirect_to root_path
