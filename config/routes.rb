@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'visitors#new'
-  resources :contacts
- 
+  resources :contacts, only: [:new, :create]
+  resources :visitors, only: [:new, :create]
   
 end
 
